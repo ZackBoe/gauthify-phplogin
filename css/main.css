@@ -1,0 +1,36 @@
+
+
+/* ==========================================================================
+   Author's custom styles
+   ========================================================================== */
+
+
+.loginBar {
+	display: none;
+	z-index: 5;
+	margin: 0 auto 0 auto;
+	width: 522px;
+}
+
+.login { position: relative; left: -220px;}
+.authCode { visibility: hidden; }
+
+.navbar {
+	z-index: 1;
+}
+
+.hero-unit {
+	z-index: 1;
+}
+
+
+
+
+
+
+
+
+
+
+
+
