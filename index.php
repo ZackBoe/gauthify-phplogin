@@ -62,37 +62,37 @@ require_once('config.php');
 
             <!-- Main hero unit for a primary marketing message or call to action -->
             <div class="hero-unit">
-                <h1>Hello, world!</h1>
-                <p>This is a template for a simple marketing or informational website. It includes a large callout called the hero unit and three supporting pieces of content. Use it as a starting point to create something more unique.</p>
-                <p><a class="btn btn-primary btn-large">Learn more &raquo;</a></p>
+                <p>You can test this out using the email <code>test@email.com</code></p>
+                <p>You'll need the <a href="http://support.google.com/accounts/bin/answer.py?hl=en&answer=1066447">Google Authenticator app</a> to check this out.</p>
+                <p><a href="#qrmodal" data-toggle="modal">Scan this QR code</a> in Google Authenticator and enter the auth code above.</p>
+
             </div>
 
             <!-- Example row of columns -->
             <div class="row">
-                <div class="span4">
-                    <h2>Heading</h2>
-                    <p>Donec id elit non mi porta gravida at eget metus. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa justo sit amet risus. Etiam porta sem malesuada magna mollis euismod. Donec sed odio dui. </p>
-                    <p><a class="btn" href="#">View details &raquo;</a></p>
-                </div>
-                <div class="span4">
-                    <h2>Heading</h2>
-                    <p>Donec id elit non mi porta gravida at eget metus. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa justo sit amet risus. Etiam porta sem malesuada magna mollis euismod. Donec sed odio dui. </p>
-                    <p><a class="btn" href="#">View details &raquo;</a></p>
-               </div>
-                <div class="span4">
-                    <h2>Heading</h2>
-                    <p>Donec sed odio dui. Cras justo odio, dapibus ac facilisis in, egestas eget quam. Vestibulum id ligula porta felis euismod semper. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa justo sit amet risus.</p>
-                    <p><a class="btn" href="#">View details &raquo;</a></p>
+                <div class="span8">
+                    <h2>Simple GAuthify PHP Login</h2>
+                    <p>Relativly simple login system using <a href="https://gauthify.com">GAuthify's API.</a> Checks if user exists in database (disabled for demo) and if so, checks for authentication using a OTP from the Google Authenticator App.</p>
                 </div>
             </div>
 
             <hr>
 
             <footer>
-                <p>&copy; Company 2012</p>
+                <p><a href="http://zackboehm.com">Zack Boehm</a> | <a href="https://twitter.com/zackboehm">@ZackBoehm | <a href="https://github.com/zackboe/GAuthify-PHPLogin/">GitHub</a></p>
             </footer>
 
         </div> <!-- /container -->
+
+        <div id="qrmodal" class="modal hide fade" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+          <div class="modal-body">
+            <img src="https://www.gauthify.com/qr/LS3JUZ4TAL2NLT65/">
+          </div>
+          <div class="modal-footer">
+            <button class="btn" data-dismiss="modal" aria-hidden="true">Close</button>
+          </div>
+        </div>
+
 
         <script src="//ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
         <script>window.jQuery || document.write('<script src="js/vendor/jquery-1.9.1.min.js"><\/script>')</script>

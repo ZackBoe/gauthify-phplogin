@@ -66,6 +66,8 @@ $('.launchLogin').click(function() {
 			  	    	  	  	if(result === "1"){
 			  	    	  	  		//login user
 			  	    	  	  		console.log("authenticated");
+			  	    	  	  		toggleAlert('info','success');
+			  	    	  	  		alert.html("Successfully Authenticated!");
 			  	    	  	  	}
 			  	    	  	  	else{
 			  	    	  	  		console.log('bad auth code');
