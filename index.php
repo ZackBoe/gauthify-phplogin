@@ -55,7 +55,7 @@ require_once('config.php');
                 </div>
                 <form class="loginForm form-inline">
                     <input class="email" type="text" class="input-large" placeholder="Email">
-                    <input class="authCode" type="text" class="input-small" placeholder="Auth Code">
+                    <input class="authCode" data-id="" type="text" class="input-small" placeholder="Auth Code">
                      <a type="submit" class="login btn">Sign in</a>
                 </form>
             </div>
