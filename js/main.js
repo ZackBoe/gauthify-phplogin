@@ -1,8 +1,5 @@
 
-function toggleAlert(rem, add){
-	$('.loginAlert').removeClass('alert-'+ rem);
-	$('.loginAlert').addClass('alert-'+ add);
-}
+function toggleAlert(rem, add){ $('.loginAlert').removeClass('alert-'+ rem); $('.loginAlert').addClass('alert-'+ add); }
 
 $('.launchLogin').click(function() {
 	var login = $('.login');
@@ -14,13 +11,10 @@ $('.launchLogin').click(function() {
 	$('.loginBar').slideDown();
 	email.focus();
 
-
-	$('.email').keydown(function(event){    
-	    if(event.keyCode==13){
-	    	console.log('Enter pressed, triggering email check.');
-	    	login.trigger('click');
-	    }
-	});
+	//EMAIL CLICK OR ENTER
+		$('.email').keydown(function(event){ 
+			if(event.keyCode==13){ console.log('Enter pressed, triggering email check.'); login.trigger('click'); } 
+		});
 
 		login.click(function(){
 			toggleAlert('error','info');
@@ -49,16 +43,13 @@ $('.launchLogin').click(function() {
 			  	    authCode.focus();
 			  	    login.animate({left: "0"});
 
-
-
+				//AUTH CLICK OR ENTER
 			  	    $('.authCode').keydown(function(event){    
-			  	        if(event.keyCode==13){
-			  	           console.log('Enter pressed, triggering auth check.');
-			  	           login.trigger('click');
-			  	        }
+			  	        if(event.keyCode==13){ console.log('Enter pressed, triggering auth check.'); login.trigger('click'); }
 			  	    });
 
 			  	    login.unbind("click").click(function(){
+			  	    	//If this is a valid auth code, pass it to GAuthify
 			  	    	toggleAlert('error','info');
 			  	    	$('.loginForm').slideUp();
 			  	    	console.log('%c-- BEGIN AUTH CHECK --', "color: blue;");
@@ -94,20 +85,7 @@ $('.launchLogin').click(function() {
 			  	    	  	  		authCode.focus();
 			  	    	  	  		authCode.val("");
 			  	    	  	  	}
-			  	    	  	  }
-			  	    	  	}); }
-			  	    	});//click
-			  	}
-			  	  }
-			  	});
-			});
-
-
-
-
-
-	//Check authcode
-
-
-
-	});
+	//Holy brackets Batman!
+			  	    	  	  } }); } });//auth click
+			  		} } }); });//email click
+	});//login click
