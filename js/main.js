@@ -14,6 +14,14 @@ $('.launchLogin').click(function() {
 	$('.loginBar').slideDown();
 	email.focus();
 
+
+	$('.email').keydown(function(event){    
+	    if(event.keyCode==13){
+	       login.trigger('click');
+	       console.log('enter');
+	    }
+	});
+
 		login.click(function(){
 			toggleAlert('error','info');
 			console.log('CHECK EMAIL');
@@ -40,6 +48,15 @@ $('.launchLogin').click(function() {
 			  	    authCode.css('visibility','visible');
 			  	    authCode.focus();
 			  	    login.animate({left: "0"});
+
+
+
+			  	    $('.authCode').keydown(function(event){    
+			  	        if(event.keyCode==13){
+			  	           login.trigger('click');
+			  	           console.log('enter');
+			  	        }
+			  	    });
 
 			  	    login.unbind("click").click(function(){
 			  	    	toggleAlert('error','info');
