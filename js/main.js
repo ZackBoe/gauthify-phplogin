@@ -24,7 +24,7 @@ $('.launchLogin').click(function() {
 
 		login.click(function(){
 			toggleAlert('error','info');
-			console.log('-- BEGIN EMAIL CHECK --');
+			console.log('%c-- BEGIN EMAIL CHECK --', "color: blue;");
 			//Ask database if this is an email
 			var userEmail = email.val();
 			console.log('User\'s email is: '+userEmail);
@@ -34,7 +34,7 @@ $('.launchLogin').click(function() {
 			  	  data: {email: userEmail},
 			  	  success: function(result) {
 			  	  	if(result === "No Email Found"){
-			  	  		console.log('Email not found in DB');
+			  	  		console.log('%cEmail not found in DB', "color: firebrick;");
 			  	  		toggleAlert('info','error');
 			  	  		alert.html("Looks like you aren't registered, or your email was incorrect.<br>Would you like to <a href='register.php'>register now?</a>");
 			  	  		email.val("");
@@ -61,12 +61,12 @@ $('.launchLogin').click(function() {
 			  	    login.unbind("click").click(function(){
 			  	    	toggleAlert('error','info');
 			  	    	$('.loginForm').slideUp();
-			  	    	console.log('-- BEGIN AUTH CHECK --');
+			  	    	console.log('%c-- BEGIN AUTH CHECK --', "color: blue;");
 						alert.html('Processing<span class="ellipsis">...</span>');
 			  	    	var userAuth = authCode.val();
 			  	    	console.log("User's GAuth ID - Auth Code: "+gauthID+"-"+userAuth);
 			  	    	if(isNaN(authCode) && userAuth.length != 6){
-			  	    		console.log('Invalid auth code. Length: '+userAuth.length);
+			  	    		console.log('%cInvalid auth code. Length: '+userAuth.length, "color: firebrick;");
 			  	    		toggleAlert('info', 'error');
 			  	    		alert.html('That\'s not a valid authentication code.');
 			  	    		$('.loginForm').slideDown();
@@ -87,7 +87,7 @@ $('.launchLogin').click(function() {
 			  	    	  	  		alert.html("Successfully Authenticated!");
 			  	    	  	  	}
 			  	    	  	  	else{
-			  	    	  	  		console.log('Auth code incorrect.');
+			  	    	  	  		console.log('%cAuth code incorrect.', "color: firebrick;");
 			  	    	  	  		toggleAlert('info', 'error');
 			  	    	  	  		alert.html('Authentication code was incorrect.');
 			  	    	  	  		$('.loginForm').slideDown();
