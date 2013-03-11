@@ -13,10 +13,7 @@ require_once('config.php');
 
         <link rel="stylesheet" href="css/bootstrap.min.css">
         <style>
-            body {
-                padding-top: 60px;
-                padding-bottom: 40px;
-            }
+            body { padding-top: 60px; padding-bottom: 40px; }
         </style>
         <link rel="stylesheet" href="css/bootstrap-responsive.min.css">
         <link rel="stylesheet" href="css/main.css">
@@ -24,9 +21,6 @@ require_once('config.php');
         <script src="js/vendor/modernizr-2.6.2.min.js"></script>
     </head>
     <body>
-
-        <!-- This code is taken from http://twitter.github.com/bootstrap/examples/hero.html -->
-
         <div class="navbar navbar-fixed-top">
             <div class="navbar-inner">
                 <div class="container">
@@ -50,9 +44,7 @@ require_once('config.php');
         </div>
         <div class="container">
             <div class="loginBar">
-                <div class="loginAlert alert alert-info">
-                  Enter your email below!
-                </div>
+                <div class="loginAlert alert alert-info">Enter your email below!</div>
                 <form class="loginForm form-inline">
                     <input class="email" type="text" class="input-large" placeholder="Email">
                     <input class="authCode" data-id="" type="text" class="input-small" placeholder="Auth Code">
@@ -60,15 +52,13 @@ require_once('config.php');
                 </form>
             </div>
 
-            <!-- Main hero unit for a primary marketing message or call to action -->
             <div class="hero-unit">
-                <p>You can test this out using the email <code>test@email.com</code></p>
+                <p>You can test this out using the email <code>test@example.com</code></p>
                 <p>You'll need the <a href="http://support.google.com/accounts/bin/answer.py?hl=en&answer=1066447">Google Authenticator app</a> to check this out.</p>
                 <p><a href="#qrmodal" data-toggle="modal">Scan this QR code</a> in Google Authenticator and enter the auth code above.</p>
 
             </div>
 
-            <!-- Example row of columns -->
             <div class="row">
                 <div class="span8">
                     <h2>Simple GAuthify PHP Login</h2>
@@ -79,12 +69,12 @@ require_once('config.php');
             <hr>
 
             <footer>
-                <p><a href="http://zackboehm.com">Zack Boehm</a> | <a href="https://twitter.com/zackboehm">@ZackBoehm | <a href="https://github.com/zackboe/GAuthify-PHPLogin/">GitHub</a></p>
+                <p><a href="http://zackboehm.com">Zack Boehm</a> | <a href="https://twitter.com/zackboehm">@ZackBoehm</a> | <a href="https://github.com/zackboe/GAuthify-PHPLogin/">GitHub</a></p>
             </footer>
 
         </div> <!-- /container -->
 
-        <div id="qrmodal" class="modal hide fade" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+        <div id="qrmodal" style="width: 280px;"class="modal hide fade" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
           <div class="modal-body">
             <img src="https://www.gauthify.com/qr/LS3JUZ4TAL2NLT65/">
           </div>
@@ -93,12 +83,10 @@ require_once('config.php');
           </div>
         </div>
 
-
         <script src="//ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
         <script>window.jQuery || document.write('<script src="js/vendor/jquery-1.9.1.min.js"><\/script>')</script>
-
         <script src="js/vendor/bootstrap.min.js"></script>
-
         <script src="js/main.js"></script>
+
     </body>
 </html>
