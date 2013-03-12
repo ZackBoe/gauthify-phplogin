@@ -18,7 +18,7 @@ if(isset($_POST['email'])){
 	else{echo 'No Email Found'; }
 
 	/*Demo purposes
-	if($_POST['email'] == 'test@email.com'){ echo json_encode(array('username' => 'test user', 'email' => 'test@example.com', 'gauthID' => 'phplogin')); }
+	if($_POST['email'] == 'test@example.com'){ echo json_encode(array('username' => 'test user', 'email' => 'test@example.com', 'gauthID' => 'phplogin')); }
 	else echo 'No Email Found';*/
 	
 }
