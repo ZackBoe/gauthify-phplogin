@@ -4,17 +4,20 @@
    Author's custom styles
    ========================================================================== */
 
-
 .loginBar {
 	display: none;
 	z-index: 5;
 	margin: 0 auto 0 auto;
 	width: 522px;
+    padding-bottom: 20px;
 }
 
-.login { position: relative; left: -220px;}
-.authCode { visibility: hidden; }
+.login { position: relative; left: -185px;}
+.email { width: 50%; }
+.authCode { width: 35%; visibility: hidden; }
 .navbar { z-index: 1; }
+
+.modal-dialog { width: 375px; }
 
 /* Elipsis animation (Processing...) */
 .ellipsis {

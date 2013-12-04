@@ -11,56 +11,51 @@ require_once('config.php');
         <meta name="description" content="">
         <meta name="viewport" content="width=device-width">
 
-        <link rel="stylesheet" href="css/bootstrap.min.css">
+        <link rel="stylesheet" href="//netdna.bootstrapcdn.com/bootstrap/3.0.2/css/bootstrap.min.css">
         <style>
-            body { padding-top: 60px; padding-bottom: 40px; }
+            body { padding-top: 70px; padding-bottom: 40px; }
         </style>
-        <link rel="stylesheet" href="css/bootstrap-responsive.min.css">
         <link rel="stylesheet" href="css/main.css">
 
         <script src="js/vendor/modernizr-2.6.2.min.js"></script>
     </head>
     <body>
-        <div class="navbar navbar-fixed-top">
-            <div class="navbar-inner">
-                <div class="container">
-                    <a class="btn btn-navbar" data-toggle="collapse" data-target=".nav-collapse">
-                        <span class="icon-bar"></span>
-                        <span class="icon-bar"></span>
-                        <span class="icon-bar"></span>
-                    </a>
-                    <a class="brand" href="#">GAuthify-PHPLogin</a>
-                    <ul class="nav pull-right">
-                        <?php
-                        if(isset($_SESSION['username'])){
-                            echo 'Hello, '.$_SESSION['username'].'!';
-                            echo '<li><a class="launchLogout" href="#">Logout</a></li>';
-                        }
-                        else{ echo '<li><a class="launchLogin" href="#">Login</a></li>'; }
-                        ?>
-                    </ul>
+        <div class="navbar navbar-default navbar-fixed-top">
+            <div class="container">
+                <div class="navbar-header">
+                    <a class="navbar-brand" href="#">GAuthify-PHPLogin</a>
                 </div>
+                <ul class="nav pull-right">
+                <?php
+                    if(isset($_SESSION['username'])){
+                        echo 'Hello, '.$_SESSION['username'].'!';
+                        echo '<li><a class="launchLogout" href="#">Logout</a></li>';
+                    }
+                    else{
+                        echo '<li><button type="button" class="launchLogin btn btn-default navbar-btn">Sign in</button></li>';
+                    }
+                ?>
+                </ul>
             </div>
         </div>
         <div class="container">
             <div class="loginBar">
                 <div class="loginAlert alert alert-info">Enter your email below!</div>
                 <form class="loginForm form-inline">
-                    <input class="email" type="text" class="input-large" placeholder="Email">
-                    <input class="authCode" data-id="" type="text" class="input-small" placeholder="Auth Code">
-                     <a type="submit" class="login btn">Sign in</a>
+                    <input class="email form-control" type="text" placeholder="Email">
+                    <input class="authCode form-control" data-id="" type="text" placeholder="Auth Code">
+                     <a class="login btn btn-primary">Sign in</a>
                 </form>
             </div>
 
-            <div class="hero-unit">
+            <div class="jumbotron">
                 <p>You can test this out using the email <code>test@example.com</code></p>
-                <p>You'll need the <a href="http://support.google.com/accounts/bin/answer.py?hl=en&answer=1066447">Google Authenticator app</a> to check this out.</p>
-                <p><a href="#qrmodal" data-toggle="modal">Scan this QR code</a> in Google Authenticator and enter the auth code above.</p>
-
+                <p>You'll need the <a href="http://support.google.com/accounts/bin/answer.py?hl=en&answer=1066447" target="_blank">Google Authenticator app <small>(or similar)</small></a> to check this out.</p>
+                <p><a data-toggle="modal" data-target="#qrModal">Scan this QR code</a> in Google Authenticator and enter the auth code above.</p>
             </div>
 
             <div class="row">
-                <div class="span8">
+                <div class="col-md-8">
                     <h2>Simple GAuthify PHP Login</h2>
                     <p>Relativly simple login system using <a href="https://gauthify.com">GAuthify's API.</a> Checks if user exists in database (disabled for demo) and if so, checks for authentication using a OTP from the Google Authenticator App.</p>
                 </div>
@@ -74,18 +69,22 @@ require_once('config.php');
 
         </div> <!-- /container -->
 
-        <div id="qrmodal" style="width: 280px;"class="modal hide fade" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
-          <div class="modal-body">
-            <img src="https://www.gauthify.com/qr/LS3JUZ4TAL2NLT65/">
-          </div>
-          <div class="modal-footer">
-            <button class="btn" data-dismiss="modal" aria-hidden="true">Close</button>
+        <div class="modal fade" id="qrModal" tabindex="-1" role="dialog" aria-labelledby="qrModal" aria-hidden="true">
+          <div class="modal-dialog">
+            <div class="modal-content">
+              <div class="modal-body">
+                <img src="img/qr.png" class="img-thumbnail img-responsive">
+              </div>
+              <div class="modal-footer">
+                <button type="button" class="btn btn-primary" data-dismiss="modal">Close</button>
+              </div>
+            </div>
           </div>
         </div>
 
         <script src="//ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
         <script>window.jQuery || document.write('<script src="js/vendor/jquery-1.9.1.min.js"><\/script>')</script>
-        <script src="js/vendor/bootstrap.min.js"></script>
+        <script src="//netdna.bootstrapcdn.com/bootstrap/3.0.2/js/bootstrap.min.js"></script>
         <script src="js/main.js"></script>
 
     </body>

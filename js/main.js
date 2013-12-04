@@ -17,7 +17,7 @@ $('.launchLogin').click(function() {
 		});
 
 		login.click(function(){
-			toggleAlert('error','info');
+			toggleAlert('danger','info');
 			console.log('%c-- BEGIN EMAIL CHECK --', "color: blue;");
 			//Ask database if this is an email
 			var userEmail = email.val();
@@ -29,7 +29,7 @@ $('.launchLogin').click(function() {
 			  	  success: function(result) {
 			  	  	if(result === "No Email Found"){
 			  	  		console.log('%cEmail not found in DB', "color: firebrick;");
-			  	  		toggleAlert('info','error');
+			  	  		toggleAlert('info','danger');
 			  	  		alert.html("Looks like you aren't registered, or your email was incorrect.<br>Would you like to <a href='register.php'>register now?</a>");
 			  	  		email.val("");
 			  	  	}
@@ -50,7 +50,7 @@ $('.launchLogin').click(function() {
 
 			  	    login.unbind("click").click(function(){
 			  	    	//If this is a valid auth code, pass it to GAuthify
-			  	    	toggleAlert('error','info');
+			  	    	toggleAlert('danger','info');
 			  	    	$('.loginForm').slideUp();
 			  	    	console.log('%c-- BEGIN AUTH CHECK --', "color: blue;");
 						alert.html('Processing<span class="ellipsis">...</span>');
@@ -58,7 +58,7 @@ $('.launchLogin').click(function() {
 			  	    	console.log("User's GAuth ID - Auth Code: "+gauthID+"-"+userAuth);
 			  	    	if(isNaN(authCode) && userAuth.length != 6){
 			  	    		console.log('%cInvalid auth code. Length: '+userAuth.length, "color: firebrick;");
-			  	    		toggleAlert('info', 'error');
+			  	    		toggleAlert('info', 'danger');
 			  	    		alert.html('That\'s not a valid authentication code.');
 			  	    		$('.loginForm').slideDown();
 			  	    		authCode.focus();
@@ -79,7 +79,7 @@ $('.launchLogin').click(function() {
 			  	    	  	  	}
 			  	    	  	  	else{
 			  	    	  	  		console.log('%cAuth code incorrect.', "color: firebrick;");
-			  	    	  	  		toggleAlert('info', 'error');
+			  	    	  	  		toggleAlert('info', 'danger');
 			  	    	  	  		alert.html('Authentication code was incorrect.');
 			  	    	  	  		$('.loginForm').slideDown();
 			  	    	  	  		authCode.focus();
