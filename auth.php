@@ -28,7 +28,7 @@ if(isset($_POST['auth'])){
 	$authCode = $_POST['auth'];
 	$userID = $_POST['uniqID'];
 	$gAuth = new GAuthify($GAuthAPI);
-	$authCheck = $gAuth->get_user($userID, $authCode);
-	echo $authCheck['authenticated'];
+	$authCheck = $gAuth->check_auth($userID, $authCode);
+	echo $authCheck;
 }
 ?>
